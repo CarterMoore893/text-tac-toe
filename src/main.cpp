@@ -4,24 +4,26 @@
 *******************************************************************************/
 #include <iostream>
 #include <string>
+#include "board.h"
 
 using namespace::std;
 
 int main (void)
 {
-    // TODO: Write out game flow. Get a good feel for what's needed for 
-    // functions, objects, methods, etc.
-
-    // do-while menus
     bool play = true;
     string strIn;
 
     do {
+        // Print menu items
         cout << "\n\n\nMain menu" << endl;
         cout << "Make a selection:" << endl;
         cout << "0. Quit the game." << endl;
         cout << "\n\n\nInput: ";
+        // (DD) Test displayBoard
+        Board myBoard;
+        myBoard.displayBoard();
 
+        // Handle user input and exeptions
         cin >> strIn;
         try {
             int numSelect = stoi(strIn);
@@ -33,7 +35,7 @@ int main (void)
             }
         }
         catch (const std::invalid_argument& ia) {
-            std::cerr << "Invalid argument: " << ia.what() << '\n';
+            cout << "Please select a valid menu option." << endl;
         }
 
     } while (play);
