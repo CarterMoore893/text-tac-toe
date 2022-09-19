@@ -22,6 +22,8 @@ int main (void)
         // (DD) Test displayBoard
         Board myBoard;
         myBoard.displayBoard();
+        myBoard.testUpdate();
+        myBoard.displayBoard();
 
         // Handle user input and exeptions
         cin >> strIn;
