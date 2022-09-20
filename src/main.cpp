@@ -2,11 +2,12 @@
   main.cpp
   A console-based tic-tac-toe game. Human vs. random selection
 *******************************************************************************/
-#include <iostream>
-#include <string>
+#include "menu.h"
 #include "board.h"
 
-using namespace::std;
+using std::cout;
+using std::cin;
+using std::endl;
 
 int main (void)
 {
@@ -14,17 +15,8 @@ int main (void)
     string strIn;
 
     do {
-        // Print menu items
-        cout << "\n\n\nMain menu" << endl;
-        cout << "Make a selection:" << endl;
-        cout << "0. Quit the game." << endl;
+        mainMenu();
         cout << "\n\n\nInput: ";
-        // (DD) Test displayBoard
-        Board myBoard;
-        myBoard.displayBoard();
-        myBoard.testUpdate();
-        myBoard.displayBoard();
-
         // Handle user input and exeptions
         cin >> strIn;
         try {
@@ -39,6 +31,12 @@ int main (void)
         catch (const std::invalid_argument& ia) {
             cout << "Please select a valid menu option." << endl;
         }
+
+        // (DD) Test displayBoard
+        Board myBoard;
+        myBoard.displayBoard();
+        myBoard.placeSymbol();
+        myBoard.displayBoard();
 
     } while (play);
 
