@@ -16,7 +16,7 @@ typedef enum eCell {
     Bot_Left  = 28,
     Bot_Cent  = 30,
     Bot_Right = 32
-}Cell;
+}eCell;
 
 class Board
 {
